@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Trees Đà Lạt 2026 | Hành Trình Đại Ngàn Vượt Thách Thức</title>
+    <!-- Phông chữ thể thao, khỏe khoắn & hiện đại -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --forest-deep: #064e3b;      /* Xanh rừng sâu */
+            --forest-light: #059669;     /* Xanh đại ngàn tươi mát */
+            --pine-green: #022c22;       /* Nền sẫm vững chãi */
+            --leaf-accent: #10b981;      /* Điểm nhấn chồi non */
+            --trail-orange: #f59e0b;     /* Màu năng lượng thể thao */
+            --text-light: #f8fafc;
+            --bg-mist: #f0fdf4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-mist);
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* 1. THANH ĐIỀU HƯỚNG TRANG */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(2, 44, 34, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 28px;
+            border-bottom: 2px solid var(--leaf-accent);
+        }
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            color: #fff;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .nav-logo span { color: var(--leaf-accent); }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--trail-orange); }
+
+        /* 2. KHỐI HERO BANNER CẢM HỨNG TRAIL ĐẠI NGÀN */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(2, 44, 34, 0.85) 0%, rgba(6, 78, 59, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: #ffffff;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.25);
+            border: 1px solid var(--leaf-accent);
+            padding: 6px 18px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #6ee7b7;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            max-width: 720px;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin: 0 auto 36px;
+            color: #cbd5e1;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-trail {
+            background-color: var(--trail-orange);
+            color: #ffffff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            padding: 14px 34px;
+            border-radius: 999px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-trail:hover {
+            transform: translateY(-3px);
+            background-color: #d97706;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            padding: 12px 30px;
+            border-radius: 999px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* 3. KHỐI THỐNG KÊ ẤN TƯỢNG (STATISTICS TRACKER) */
+        .stats-strip {
+            background: var(--pine-green);
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            border-bottom: 4px solid var(--forest-light);
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--leaf-accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .stat-desc {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 4. KHỐI NỘI DUNG TRẢI NGHIỆM ĐẠI NGÀN */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-badge {
+            color: var(--forest-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .section-header h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.4rem;
+            color: var(--forest-deep);
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .trail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .trail-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border-bottom: 4px solid var(--forest-light);
+            transition: transform 0.3s;
+        }
+        .trail-card:hover { transform: translateY(-6px); }
+        .trail-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .trail-card-body {
+            padding: 26px;
+        }
+        .trail-card-body h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.35rem;
+            color: var(--pine-green);
+            margin-bottom: 12px;
+        }
+        .trail-card-body p {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 16px;
+        }
+
+        /* 5. KHỐI MEDIA VIDEO & HÌNH ẢNH THỰC TẾ */
+        .media-section {
+            background: linear-gradient(180deg, #022c22 0%, #064e3b 100%);
+            color: #fff;
+            padding: 80px 20px;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Tỉ lệ 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 2px solid rgba(16, 185, 129, 0.4);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* 6. FORM ĐĂNG KÝ THAM GIA / ĐỒNG HÀNH */
+        .register-box {
+            background: #ffffff;
+            max-width: 680px;
+            margin: -60px auto 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        .register-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: var(--forest-deep);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .register-box p {
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        /* 7. CHÂN TRANG FOOTER */
+        footer {
+            background: #011812;
+            color: #94a3b8;
+            padding: 50px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+        footer a { color: var(--leaf-accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- THANH MENU -->
+    <nav>
+        <div class="nav-logo">HAPPY <span>TREES</span> 2026</div>
+        <div class="nav-links">
+            <a href="index.html">Trang Chủ</a>
+            <a href="gioi-thieu.html">Giới Thiệu</a>
+            <a href="#trai-nghiem">Trải Nghiệm</a>
+            <a href="#video">Khoảnh Khắc</a>
+            <a href="#dang-ky">Đồng Hành</a>
+        </div>
+    </nav>
+
+    <!-- BANNER HERO -->
+    <section class="hero">
+        <div>
+            <div class="hero-tag">Hành Trình Rừng Xanh Đà Lạt</div>
+            <h1>BƯỚC CHÂN VÀO ĐẠI NGÀN<br><span style="color: var(--leaf-accent);">ƯƠM MẦM TƯƠNG LAI</span></h1>
+            <p>Sự hòa quyện giữa thể thao rèn luyện sức bền, trải nghiệm thiên nhiên nguyên bản và sứ mệnh phủ xanh những cánh rừng thông ngút ngàn.</p>
+            <div class="hero-cta">
+                <a href="#dang-ky" class="btn-trail">Đăng Ký Tham Gia Ngay</a>
+                <a href="#video" class="btn-outline">Xem Thước Phim Rừng Xanh</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THỐNG KÊ ẤN TƯỢNG -->
+    <section class="stats-strip">
+        <div class="stat-item">
+            <div class="stat-num">600+</div>
+            <div class="stat-desc">Cây Mai Anh Đào & Thông Đã Trồng</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">1.500m</div>
+            <div class="stat-desc">Độ Cao Thử Thách Đại Ngàn</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-desc">Tự Nhiên & Năng Lượng Chữa Lành</div>
+        </div>
+    </section>
+
+    <!-- CÁC HẠNG MỤC TRẢI NGHIỆM -->
+    <section class="container" id="trai-nghiem">
+        <div class="section-header">
+            <span class="section-badge">Hệ Sinh Thái Trải Nghiệm</span>
+            <h2>CHẠM VÀO THIÊN NHIÊN ĐÀ LẠT</h2>
+        </div>
+
+        <div class="trail-grid">
+            <!-- Thẻ 1 -->
+            <article class="trail-card">
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Đường mòn rừng thông">
+                <div class="trail-card-body">
+                    <h3>1. Trekking & Thử Thách Đường Mòn</h3>
+                    <p>Sải bước qua những con dốc thông mù sương, hít thở không khí tinh khiết và đánh thức nguồn năng lượng nội lực mạnh mẽ trong từng hơi thở.</p>
+                </div>
+            </article>
+
+            <!-- Thẻ 2 -->
+            <article class="trail-card">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Gieo mầm cây xanh">
+                <div class="trail-card-body">
+                    <h3>2. Phụng Sự & Trồng Cây Rừng</h3>
+                    <p>Mỗi bước chân đồng hành đều để lại dấu ấn sống xanh bằng những gốc cây thực tế được vun trồng, góp phần giữ đất và phủ xanh cao nguyên.</p>
+                </div>
+            </article>
+
+            <!-- Thẻ 3 -->
+            <article class="trail-card">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Dưỡng thân dưỡng tâm giữa rừng">
+                <div class="trail-card-body">
+                    <h3>3. Chữa Lành & Tái Tạo Tâm Thức</h3>
+                    <p>Lớp học ngoài trời giữa tiếng thông reo, thanh lọc tâm trí, học cách thấu hiểu chính mình và kết nối sâu sắc với tự nhiên.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- MEDIA: VIDEO VÀ THƯỚC PHIM -->
+    <section class="media-section" id="video">
+        <div class="section-header">
+            <span class="section-badge" style="color: #6ee7b7;">Khoảnh Khắc Đáng Nhớ</span>
+            <h2 style="color: #ffffff;">THƯỚC PHIM HÀNH TRÌNH ĐỒNG HÀNH</h2>
+        </div>
+
+        <!-- Khung Video YouTube chuẩn 16:9 -->
+        <div class="video-wrapper">
+            <!-- Chị có thể thay mã VIDEO_ID bằng mã video YouTube thực tế của dự án -->
+            <iframe 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="Happy Trees Video" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FORM ĐĂNG KÝ ĐỒNG HÀNH -->
+    <div class="container" style="padding-top: 0;" id="dang-ky">
+        <div class="register-box">
+            <h3>ĐỒNG HÀNH CÙNG HAPPY TREES</h3>
+            <p>Đăng ký nhận thông tin lịch trình đợt gieo mầm mới và
